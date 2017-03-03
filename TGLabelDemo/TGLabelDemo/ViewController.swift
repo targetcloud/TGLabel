@@ -9,10 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var testLbl: TGLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        testLbl.text = "TGLabel https://github.com/targetcloud/TGLabel"
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +23,3 @@ class ViewController: UIViewController {
 
 
 }
-

@@ -108,6 +108,7 @@
 				TargetAttributes = {
 					6A7588E21E6965130076246D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 38C5J53JU9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -271,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 38C5J53JU9;
 				INFOPLIST_FILE = TGLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.targetcloud.TGLabelDemo;
@@ -283,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 38C5J53JU9;
 				INFOPLIST_FILE = TGLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.targetcloud.TGLabelDemo;
