@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TGLabel"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "TGLabel"
   s.homepage     = "https://github.com/targetcloud/TGLabel"
   s.license      = "MIT"
