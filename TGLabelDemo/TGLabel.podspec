@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "TGLabel"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "TGLabel"
   s.homepage     = "https://github.com/targetcloud/TGLabel"
   s.license      = "MIT"
   s.author       = { "targetcloud" => "targetcloud@163.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/targetcloud/TGLabel.git", :tag => s.version }
-  s.source_files  = "TGLabel", "TGLabelDemo/TGLabel/**/*.{swift,h,m}"
+  s.source_files  = "TGLabel", "TGLabelDemo/TGLabelDemo/TGLabel/*.{swift,h,m}"
   s.requires_arc = true
 end

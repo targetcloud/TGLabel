@@ -29,7 +29,7 @@ public class TGLabel: UILabel {
         didSet {
             updateTextStorage()
         }
-    }
+    } 
     
     override public var attributedText: NSAttributedString? {
         didSet {

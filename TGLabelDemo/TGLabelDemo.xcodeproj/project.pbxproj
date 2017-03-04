@@ -12,7 +12,7 @@
 		6A7588EC1E6965130076246D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A7588EA1E6965130076246D /* Main.storyboard */; };
 		6A7588EE1E6965130076246D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A7588ED1E6965130076246D /* Assets.xcassets */; };
 		6A7588F11E6965130076246D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A7588EF1E6965130076246D /* LaunchScreen.storyboard */; };
-		6A7588FA1E6965930076246D /* TGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7588F91E6965930076246D /* TGLabel.swift */; };
+		6A7604B61E6A8E9500D2C318 /* TGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7604B51E6A8E9500D2C318 /* TGLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		6A7588ED1E6965130076246D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A7588F01E6965130076246D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A7588F21E6965130076246D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A7588F91E6965930076246D /* TGLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGLabel.swift; sourceTree = "<group>"; };
+		6A7604B51E6A8E9500D2C318 /* TGLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 		6A7588E51E6965130076246D /* TGLabelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6A7588F81E69652C0076246D /* TGLabel */,
+				6A7604B41E6A8E9500D2C318 /* TGLabel */,
 				6A7588E61E6965130076246D /* AppDelegate.swift */,
 				6A7588E81E6965130076246D /* ViewController.swift */,
 				6A7588EA1E6965130076246D /* Main.storyboard */,
@@ -67,13 +67,12 @@
 			path = TGLabelDemo;
 			sourceTree = "<group>";
 		};
-		6A7588F81E69652C0076246D /* TGLabel */ = {
+		6A7604B41E6A8E9500D2C318 /* TGLabel */ = {
 			isa = PBXGroup;
 			children = (
-				6A7588F91E6965930076246D /* TGLabel.swift */,
+				6A7604B51E6A8E9500D2C318 /* TGLabel.swift */,
 			);
-			name = TGLabel;
-			path = ../TGLabel;
+			path = TGLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A7588E91E6965130076246D /* ViewController.swift in Sources */,
-				6A7588FA1E6965930076246D /* TGLabel.swift in Sources */,
+				6A7604B61E6A8E9500D2C318 /* TGLabel.swift in Sources */,
 				6A7588E71E6965130076246D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +312,7 @@
 				6A7588F71E6965130076246D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
