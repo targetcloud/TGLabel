@@ -15,26 +15,53 @@ public protocol TGLabelDelegate: NSObjectProtocol {
 
 public class TGLabel: UILabel {
     
-    public var linkTextColor = UIColor.blue
-    public var selectedBackgroudColor = UIColor.lightGray
+    public var linkTextColor =  UIColor(red: 115/255, green: 146/255, blue: 174/255, alpha: 1)
+    
+    public var selectedBackgroudColor = UIColor.lightGray.withAlphaComponent(0.3)
+    
+    public var autoresizingHeight = false{
+        didSet{
+            if autoresizingHeight {
+                self.resizingHeight()
+            }
+        }
+    }
+    
+    public var adjustCoefficient : CGFloat = 0.1{
+        didSet{
+            if adjustCoefficient > 1{
+                adjustCoefficient = oldValue
+            }else if adjustCoefficient < 0.01{
+                adjustCoefficient = 0.01
+            }
+        }
+    }
+    
     public weak var delegate: TGLabelDelegate?
     private lazy var linkRanges = [NSRange]()
     private var selectedRange: NSRange?
     private lazy var textStorage = NSTextStorage()
     private lazy var layoutManager = NSLayoutManager()
     private lazy var textContainer = NSTextContainer()
-    private let patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
+    public var patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#","\\$.*?\\$", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
     
     override public var text: String? {
         didSet {
             updateTextStorage()
         }
-    } 
+    }
     
     override public var attributedText: NSAttributedString? {
         didSet {
             updateTextStorage()
         }
+    }
+    
+    public var content : NSAttributedString?{
+        if attributedText == nil {
+            attributedText = NSAttributedString(string: text ?? "")
+        }
+        return attributedText
     }
     
     override public var font: UIFont! {
@@ -52,6 +79,9 @@ public class TGLabel: UILabel {
     private func updateTextStorage() {
         if attributedText == nil {
             attributedText = NSAttributedString(string: text ?? "")
+        }
+        if autoresizingHeight {
+            resizingHeight()
         }
         let attrStringM = addLineBreak(attributedText!)
         regexLinkRanges(attrStringM)
@@ -89,6 +119,14 @@ public class TGLabel: UILabel {
         }
     }
     
+    /*
+     case byWordWrapping // Wrap at word boundaries, default
+     case byCharWrapping // Wrap at character boundaries
+     case byClipping // Simply clip
+     case byTruncatingHead // Truncate at head of line: "...wxyz"
+     case byTruncatingTail // Truncate at tail of line: "abcd..."
+     case byTruncatingMiddle // Truncate middle of line:  "ab...yz"
+     */
     private func addLineBreak(_ attrString: NSAttributedString) -> NSMutableAttributedString {
         let attrStringM = NSMutableAttributedString(attributedString: attrString)
         if attrStringM.length == 0 {
@@ -98,12 +136,12 @@ public class TGLabel: UILabel {
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
         guard let paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle else{
             let paragraphStyleM = NSMutableParagraphStyle()
-            paragraphStyleM.lineBreakMode = NSLineBreakMode.byWordWrapping
+            paragraphStyleM.lineBreakMode = NSLineBreakMode.byCharWrapping
             attributes[NSParagraphStyleAttributeName] = paragraphStyleM
             attrStringM.setAttributes(attributes, range: range)
             return attrStringM
         }
-        paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
+        paragraphStyle.lineBreakMode = NSLineBreakMode.byCharWrapping
         return attrStringM
     }
     
@@ -120,7 +158,7 @@ public class TGLabel: UILabel {
     
     private func glyphsOffset(_ range: NSRange) -> CGPoint {
         let rect = layoutManager.boundingRect(forGlyphRange: range, in: textContainer)
-        let height = (bounds.height - rect.height) * 0.5
+        let height = (bounds.height - rect.height) * adjustCoefficient
         return CGPoint(x: 0, y: height)
     }
     
@@ -189,12 +227,19 @@ public class TGLabel: UILabel {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        self.setup()
         prepareLabel()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.setup()
         prepareLabel()
+    }
+    
+    private func setup(){
+        self.textAlignment = .left
+        self.numberOfLines = 0
     }
     
     public override func layoutSubviews() {
@@ -209,5 +254,10 @@ public class TGLabel: UILabel {
         isUserInteractionEnabled = true
     }
     
+    private func resizingHeight(){
+        let viewSize = CGSize(width: self.bounds.width, height: CGFloat(MAXFLOAT))
+        let textHeight = (self.text?.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[NSFontAttributeName: self.font],context: nil).height)! + 1
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.bounds.width, height: textHeight)
+    }
+    
 }
-

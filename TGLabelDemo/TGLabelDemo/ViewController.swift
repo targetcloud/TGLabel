@@ -13,9 +13,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLbl.text = "TGLabel https://github.com/targetcloud/TGLabel"
+//        testLbl.autoresizingHeight = true
+        testLbl.text = "TGLabel 感谢你使用TGLabel 欢迎你star/issue https://github.com/targetcloud/TGLabel"
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        testLbl.autoresizingHeight = true
+        testLbl.text = "我变了，我真的变了，https://github.com/targetcloud/TGLabel https://github.com/targetcloud https://github.com"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
