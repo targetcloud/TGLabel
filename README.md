@@ -2,12 +2,13 @@
 
   ## TGLabel
 一款可以根据传入的正则表达式自动匹配文本中的子文本对象，子文本对象按自定义方式显示和事件交互处理的UILabel。
-<img src="https://github.com/targetcloud/TGLabel/blob/master/屏幕快照%202017-06-20%20下午10.50.31.png" width = "20%" hight = "20%"/>
+
+<img src="https://github.com/targetcloud/TGLabel/blob/master/屏幕快照%202017-06-20%20下午10.50.31.png" width = "40%" hight = "30%"/>
 
 ![Build](https://img.shields.io/badge/build-passing-green.svg)
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)]
-[![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)]
-[![Cocoapod](https://img.shields.io/badge/pod-v0.0.7-blue.svg)]
+![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)
+![Cocoapod](https://img.shields.io/badge/pod-v0.0.7-blue.svg)
 
 ## Features
 - [x] 支持正则匹配子文本
@@ -31,7 +32,8 @@
 ```
 
 
-<img src="https://github.com/targetcloud/TGLabel/blob/master/屏幕快照%202017-06-20%20下午10.53.06.png" width = "50%" hight = "50%"/>
+<img src="https://github.com/targetcloud/TGLabel/blob/master/屏幕快照%202017-06-20%20下午10.53.06.png" width = "40%" hight = "40%"/>
+
 
 ### 可以配置的属性
 ```
@@ -47,7 +49,9 @@ font
 textColor
 ```
 
+
 ### 更多使用配置组合效果请下载本项目或fork本项目查看
+
 
 ## Installation
 - 下载并拖动TGLabel到你的工程中
@@ -57,8 +61,10 @@ textColor
 pod 'TGLabel'
 ```
 
+
 ## Reference
 - http://blog.csdn.net/callzjy
+
 
 ## 运行效果
 ![](https://github.com/targetcloud/TGLabel/blob/master/laebl.gif) 
