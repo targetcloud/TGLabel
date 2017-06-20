@@ -9,6 +9,7 @@
 ![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 ![Platform](https://img.shields.io/cocoapods/p/Pastel.svg?style=flat)
 ![Cocoapod](https://img.shields.io/badge/pod-v0.0.7-blue.svg)
+![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
 ## Features
 - [x] 支持正则匹配子文本
@@ -37,16 +38,16 @@
 
 ### 可以配置的属性
 ```
-patterns
-delegate
-adjustCoefficient
-autoresizingHeight
-selectedBackgroudColor
-linkTextColor
-text
-attributedText
-font
-textColor
+patterns 正则
+delegate 代理
+adjustCoefficient 选中时的高度调整系数
+autoresizingHeight 自适应高度
+selectedBackgroudColor 选中背景色
+linkTextColor 选中色
+text 文本
+attributedText 同上
+font 字体
+textColor 普通文本色
 ```
 
 
