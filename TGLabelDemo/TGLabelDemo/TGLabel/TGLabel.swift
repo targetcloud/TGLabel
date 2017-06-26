@@ -38,12 +38,17 @@ public class TGLabel: UILabel {
     }
     
     public weak var delegate: TGLabelDelegate?
+    
+    public var patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*",
+                           "#.*?#",
+                           "\\$.*?\\$",
+                           "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
+    
     private lazy var linkRanges = [NSRange]()
     private var selectedRange: NSRange?
     private lazy var textStorage = NSTextStorage()
     private lazy var layoutManager = NSLayoutManager()
     private lazy var textContainer = NSTextContainer()
-    public var patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#","\\$.*?\\$", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
     
     override public var text: String? {
         didSet {
