@@ -73,5 +73,5 @@ pod 'TGLabel'
 
 如果你觉得赞，请Star
 
-<img src="https://github.com/targetcloud/TGLabel/blob/master/logo.png" width = "10%" hight = "10%"/>
+<img src="https://github.com/targetcloud/TGLabel/blob/master/Banners.png" width = "10%" hight = "10%"/>
 
